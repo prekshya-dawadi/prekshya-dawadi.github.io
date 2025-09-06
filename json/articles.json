@@ -1,9 +1,9 @@
 [
     {
-        "date": "December 1, 2024",
-        "category": "Implementation",
-        "title": "Building a Neural Network from Scratch in NumPy",
-        "excerpt": "No frameworks, just pure mathematics and NumPy. Understanding forward pass, backprop, and gradient descent.",
-        "tags": ["Neural Networks", "Python", "NumPy"]
+        "date": "September 6, 2025",
+        "category": "Theory",
+        "title": "Counting",
+        "excerpt": "Start of the probability series. Follows the flow from the Probability for Computer Scientists playlist by Stanford.",
+        "tags": ["Probability", "Mathematical Foundations"]
     }
 ]
