@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadArticles() {
     try {
-        const response = await fetch('articles.json');
+        const response = await fetch('json/articles.json');
         const articles = await response.json();
 
         const container = document.getElementById('writings-grid');
