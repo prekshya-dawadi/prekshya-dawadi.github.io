@@ -5,12 +5,5 @@
         "title": "Building a Neural Network from Scratch in NumPy",
         "excerpt": "No frameworks, just pure mathematics and NumPy. Understanding forward pass, backprop, and gradient descent.",
         "tags": ["Neural Networks", "Python", "NumPy"]
-    },
-    {
-        "date": "November 20, 2024",
-        "category": "Mathematics",
-        "title": "Linear Algebra for Machine Learning: A Visual Approach",
-        "excerpt": "Making sense of vectors, matrices, and transformations through interactive visualizations.",
-        "tags": ["Linear Algebra", "Mathematics", "Visualization"]
     }
 ]
