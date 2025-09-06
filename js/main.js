@@ -75,40 +75,6 @@ navLinks.forEach(link => {
     link.addEventListener('click', scrollToTop);
 });
 
-// Add some interactive elements
-document.addEventListener('DOMContentLoaded', () => {
-    // Animate stats on page load
-    const statNumbers = document.querySelectorAll('.stat-number');
-    statNumbers.forEach((stat, index) => {
-        const finalNumber = parseInt(stat.textContent);
-        let currentNumber = 0;
-        const increment = finalNumber / 20;
-        
-        const timer = setInterval(() => {
-            currentNumber += increment;
-            if (currentNumber >= finalNumber) {
-                stat.textContent = finalNumber;
-                clearInterval(timer);
-            } else {    
-                stat.textContent = Math.floor(currentNumber);
-            }
-        }, 50);
-    });
-
-    // Add hover effects to progress items
-    const progressItems = document.querySelectorAll('.progress-item');
-    progressItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            if (item.classList.contains('active')) {
-                item.style.transform = 'scale(1.05)';
-            }
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = '';
-        });
-    });
-});
 
 async function loadArticles() {
     try {
@@ -150,5 +116,44 @@ async function loadArticles() {
     }
 }
 
-// Call when DOM is ready
-document.addEventListener('DOMContentLoaded', loadArticles);
+
+
+
+
+// Add some interactive elements
+document.addEventListener('DOMContentLoaded', () => {
+    // Animate stats on page load
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach((stat, index) => {
+        const finalNumber = parseInt(stat.textContent);
+        let currentNumber = 0;
+        const increment = finalNumber / 20;
+        
+        const timer = setInterval(() => {
+            currentNumber += increment;
+            if (currentNumber >= finalNumber) {
+                stat.textContent = finalNumber;
+                clearInterval(timer);
+            } else {    
+                stat.textContent = Math.floor(currentNumber);
+            }
+        }, 50);
+    });
+
+    // Add hover effects to progress items
+    const progressItems = document.querySelectorAll('.progress-item');
+    progressItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            if (item.classList.contains('active')) {
+                item.style.transform = 'scale(1.05)';
+            }
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = '';
+        });
+    });
+
+    loadArticles();
+});
+
