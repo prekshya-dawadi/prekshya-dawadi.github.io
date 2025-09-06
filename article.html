@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - Prekshya Dawadi</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">Prekshya Dawadi</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="article-container">
+        Loading article...
+    </main>
+
+    <script>
+        // Get the ID from the URL
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        if (id) {
+            fetch(`articles/${id}.html`)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('article-container').innerHTML = html;
+                })
+                .catch(err => {
+                    document.getElementById('article-container').innerHTML = "<p>Article not found.</p>";
+                    console.error(err);
+                });
+        } else {
+            document.getElementById('article-container').innerHTML = "<p>No article ID specified.</p>";
+        }
+    </script>
+</body>
+</html>

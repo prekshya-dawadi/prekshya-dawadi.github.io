@@ -1,9 +1,18 @@
 [
-    {
-        "date": "September 6, 2025",
-        "category": "Theory",
-        "title": "Counting",
-        "excerpt": "Start of the probability series. Follows the flow from the Probability for Computer Scientists playlist by Stanford.",
-        "tags": ["Probability", "Mathematical Foundations"]
-    }
+  {
+    "id": "neural-network-numpy",
+    "title": "Building a Neural Network from Scratch in NumPy",
+    "date": "December 1, 2024",
+    "category": "Implementation",
+    "excerpt": "No frameworks, just pure mathematics and NumPy...",
+    "tags": ["Neural Networks", "Python", "NumPy"]
+  },
+  {
+    "id": "transformers",
+    "title": "Understanding Transformers in NLP",
+    "date": "December 5, 2024",
+    "category": "Theory",
+    "excerpt": "Exploring attention mechanisms and transformer architectures...",
+    "tags": ["NLP", "Transformers"]
+  }
 ]

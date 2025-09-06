@@ -41,7 +41,7 @@ areaCards.forEach((card, index) => {
         setTimeout(() => {
             card.style.transform = '';
         }, 150);
-        
+
         // You can add modal functionality here later
         console.log(`Clicked on learning area: ${card.querySelector('.area-title').textContent}`);
     });
@@ -56,7 +56,7 @@ writingCards.forEach((card, index) => {
         setTimeout(() => {
             card.style.transform = '';
         }, 150);
-        
+
         // You can add blog post navigation here later
         console.log(`Clicked on article: ${card.querySelector('.writing-title').textContent}`);
     });
@@ -86,20 +86,21 @@ async function loadArticles() {
 
         articles.forEach(article => {
             const articleHTML = `
-                <article class="writing-card">
-                    <div class="writing-meta">
-                        <div class="writing-date">${article.date}</div>
-                        <span class="writing-category">${article.category}</span>
-                    </div>
-                    <h3 class="writing-title">${article.title}</h3>
-                    <p class="writing-excerpt">${article.excerpt}</p>
-                    <div class="writing-tags">
-                        ${article.tags.map(tag => `<span class="writing-tag">${tag}</span>`).join('')}
-                    </div>
-                </article>
-            `;
+        <a href="article.html?id=${article.id}" class="writing-card">
+            <div class="writing-meta">
+                <div class="writing-date">${article.date}</div>
+                <span class="writing-category">${article.category}</span>
+            </div>
+            <h3 class="writing-title">${article.title}</h3>
+            <p class="writing-excerpt">${article.excerpt}</p>
+            <div class="writing-tags">
+                ${article.tags.map(tag => `<span class="writing-tag">${tag}</span>`).join('')}
+            </div>
+        </a>
+    `;
             container.insertAdjacentHTML('beforeend', articleHTML);
         });
+
 
         // Add click events if desired
         const writingCards = document.querySelectorAll('.writing-card');
@@ -118,8 +119,6 @@ async function loadArticles() {
 
 
 
-
-
 // Add some interactive elements
 document.addEventListener('DOMContentLoaded', () => {
     // Animate stats on page load
@@ -128,13 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const finalNumber = parseInt(stat.textContent);
         let currentNumber = 0;
         const increment = finalNumber / 20;
-        
+
         const timer = setInterval(() => {
             currentNumber += increment;
             if (currentNumber >= finalNumber) {
                 stat.textContent = finalNumber;
                 clearInterval(timer);
-            } else {    
+            } else {
                 stat.textContent = Math.floor(currentNumber);
             }
         }, 50);
@@ -148,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.transform = 'scale(1.05)';
             }
         });
-        
+
         item.addEventListener('mouseleave', () => {
             item.style.transform = '';
         });
