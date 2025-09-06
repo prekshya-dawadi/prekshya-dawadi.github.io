@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentNumber >= finalNumber) {
                 stat.textContent = finalNumber;
                 clearInterval(timer);
-            } else {
+            } else {    
                 stat.textContent = Math.floor(currentNumber);
             }
         }, 50);
@@ -109,3 +109,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+async function loadArticles() {
+    try {
+        const response = await fetch('articles.json');
+        const articles = await response.json();
+
+        const container = document.getElementById('writings-grid');
+        container.innerHTML = ''; // clear container first
+
+        articles.forEach(article => {
+            const articleHTML = `
+                <article class="writing-card">
+                    <div class="writing-meta">
+                        <div class="writing-date">${article.date}</div>
+                        <span class="writing-category">${article.category}</span>
+                    </div>
+                    <h3 class="writing-title">${article.title}</h3>
+                    <p class="writing-excerpt">${article.excerpt}</p>
+                    <div class="writing-tags">
+                        ${article.tags.map(tag => `<span class="writing-tag">${tag}</span>`).join('')}
+                    </div>
+                </article>
+            `;
+            container.insertAdjacentHTML('beforeend', articleHTML);
+        });
+
+        // Add click events if desired
+        const writingCards = document.querySelectorAll('.writing-card');
+        writingCards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => { card.style.transform = ''; }, 150);
+                console.log(`Clicked on article: ${card.querySelector('.writing-title').textContent}`);
+            });
+        });
+
+    } catch (err) {
+        console.error('Failed to load articles:', err);
+    }
+}
+
+// Call when DOM is ready
+document.addEventListener('DOMContentLoaded', loadArticles);
