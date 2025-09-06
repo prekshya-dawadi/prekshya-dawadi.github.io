@@ -1,11 +1,11 @@
 [
   {
-    "id": "neural-network-numpy",
-    "title": "Building a Neural Network from Scratch in NumPy",
-    "date": "December 1, 2024",
-    "category": "Implementation",
+    "id": "counting",
+    "title": "Counting",
+    "date": "September 6, 2025",
+    "category": "Theory",
     "excerpt": "No frameworks, just pure mathematics and NumPy...",
-    "tags": ["Neural Networks", "Python", "NumPy"]
+    "tags": ["Probability", "Mathematical Foundations", "Python", "NumPy"]
   },
   {
     "id": "transformers",
